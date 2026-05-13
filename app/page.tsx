@@ -40,14 +40,14 @@ export default function Page() {
   return (
     <section className="flex min-h-svh items-center justify-center">
       <motion.div
-        className="mx-auto flex w-full max-w-5xl flex-col items-center gap-8 px-6 py-16 text-center"
+        className="mx-auto flex w-full max-w-6xl flex-col items-center gap-10 px-6 py-16 text-center"
         variants={containerVariants}
         initial="hidden"
         animate="show"
       >
-        <div className="flex max-w-3xl flex-col items-center gap-4">
+        <div className="flex max-w-3xl flex-col items-center gap-6">
           <motion.h1
-            className="text-4xl font-semibold tracking-tight sm:text-5xl lg:text-6xl"
+            className="font-heading text-4xl font-semibold tracking-tight sm:text-5xl"
             variants={lineVariants}
           >
             I make <span className="text-primary">websites</span>.

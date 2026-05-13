@@ -8,7 +8,13 @@ export type ProjectTechnology = {
 export type Project = {
   id: string
   name: string
-  image: string
+  video: {
+    poster: string
+    sources: {
+      src: string
+      type: string
+    }[]
+  }
   year: number
   description: string
   technologies: ProjectTechnology[]

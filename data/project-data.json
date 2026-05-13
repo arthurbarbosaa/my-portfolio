@@ -2,7 +2,6 @@
   {
     "id": "journaling",
     "name": "Journaling",
-    "image": "/assets/journaling-lp.webp",
     "year": 2023,
     "description": "A journaling app that turns reflections, habits, and goals into a clear view of your growth over time.",
     "technologies": [
@@ -12,12 +11,18 @@
       { "name": "Django", "icon": "/assets/icons/django.svg" },
       { "name": "Python", "icon": "/assets/icons/python.svg" }
     ],
-    "visitUrl": "#"
+    "visitUrl": "#",
+    "video": {
+      "poster": "/assets/images/journaling-lp.webp",
+      "sources": [
+        { "src": "/assets/videos/journaling-demo.webm", "type": "video/webm" },
+        { "src": "/assets/videos/journaling-demo.mp4", "type": "video/mp4" }
+      ]
+    }
   },
   {
     "id": "postfaster",
     "name": "Postfaster",
-    "image": "/assets/postfaster-lp.webp",
     "year": 2024,
     "description": "A tool that lets you publish content across multiple social networks at the same time, quickly and from one place.",
     "technologies": [
@@ -30,12 +35,18 @@
       { "name": "Threads", "icon": "/assets/icons/threads.svg" },
       { "name": "X", "icon": "/assets/icons/x.svg" }
     ],
-    "visitUrl": "https://postfaster.vercel.app"
+    "visitUrl": "https://postfaster.vercel.app",
+    "video": {
+      "poster": "/assets/images/postfaster-lp.webp",
+      "sources": [
+        { "src": "/assets/videos/postfaster-demo.webm", "type": "video/webm" },
+        { "src": "/assets/videos/postfaster-demo.mp4", "type": "video/mp4" }
+      ]
+    }
   },
   {
     "id": "multiplayer-game",
     "name": "Multiplayer Game",
-    "image": "/assets/game-preview.gif",
     "year": 2025,
     "description": "A real-time multiplayer game implementation focused on client-server communication, state synchronization, and multi-player interaction.",
     "technologies": [
@@ -45,12 +56,18 @@
       { "name": "Html", "icon": "/assets/icons/html.svg" },
       { "name": "Css", "icon": "/assets/icons/css.svg" }
     ],
-    "visitUrl": "https://github.com/arthurbarbosaa/meu-primeiro-jogo-multiplayer"
+    "visitUrl": "https://github.com/arthurbarbosaa/meu-primeiro-jogo-multiplayer",
+    "video": {
+      "poster": "/assets/images/game-preview.gif",
+      "sources": [
+        { "src": "/assets/videos/game-demo.webm", "type": "video/webm" },
+        { "src": "/assets/videos/game-demo.mp4", "type": "video/mp4" }
+      ]
+    }
   },
   {
     "id": "portfolio-project",
     "name": "Portfolio Project",
-    "image": "/assets/portfolio.webp",
     "year": 2025,
     "description": "A platform for creating and publishing portfolios quickly, highlighting projects and technologies in a simple and professional way.",
     "technologies": [
@@ -62,12 +79,18 @@
       { "name": "Python", "icon": "/assets/icons/python.svg" },
       { "name": "Jest", "icon": "/assets/icons/jest.svg" }
     ],
-    "visitUrl": "https://dev-portfolio-arthur-barbosa.vercel.app"
+    "visitUrl": "https://dev-portfolio-arthur-barbosa.vercel.app",
+    "video": {
+      "poster": "/assets/images/portfolio.webp",
+      "sources": [
+        { "src": "/assets/videos/portfolio-demo.webm", "type": "video/webm" },
+        { "src": "/assets/videos/portfolio-demo.mp4", "type": "video/mp4" }
+      ]
+    }
   },
   {
     "id": "tonyboy-promos",
     "name": "Tonyboy Promos",
-    "image": "/assets/tonyboy-promos.webp",
     "year": 2026,
     "description": "A platform that sends personalized promotions based on the products each user chooses to follow.",
     "technologies": [
@@ -79,6 +102,13 @@
       { "name": "Python", "icon": "/assets/icons/python.svg" },
       { "name": "Jest", "icon": "/assets/icons/jest.svg" }
     ],
-    "visitUrl": "https://offer-notifier.vercel.app"
+    "visitUrl": "https://offer-notifier.vercel.app",
+    "video": {
+      "poster": "/assets/images/tonyboy-promos.webp",
+      "sources": [
+        { "src": "/assets/videos/tonyboy-demo.webm", "type": "video/webm" },
+        { "src": "/assets/videos/tonyboy-demo.mp4", "type": "video/mp4" }
+      ]
+    }
   }
 ]

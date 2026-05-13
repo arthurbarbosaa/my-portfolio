@@ -46,9 +46,9 @@ type ProjectDetailProps = {
 
 export function ProjectDetail({ project }: ProjectDetailProps) {
   return (
-    <section className="flex min-h-svh items-center justify-center px-6 py-10 sm:py-14">
+    <section className="flex min-h-svh items-center justify-center">
       <motion.div
-        className="grid w-full max-w-6xl items-center gap-8 md:grid-cols-2"
+        className="grid w-full max-w-6xl gap-10 px-6 py-16 md:grid-cols-2 md:items-center"
         variants={containerVariants}
         initial="hidden"
         animate="show"
@@ -56,14 +56,20 @@ export function ProjectDetail({ project }: ProjectDetailProps) {
         <motion.div variants={lineVariants}>
           <Card className="mx-auto w-full max-w-xl gap-0 overflow-hidden bg-transparent py-0 ring-0 md:mx-0">
             <div className="relative aspect-[16/10] w-full">
-              <Image
-                src={project.image}
-                alt={project.name}
-                fill
-                sizes="(min-width: 1024px) 45vw, 95vw"
-                className="object-cover"
-                priority
-              />
+              <video
+                className="h-full w-full object-cover"
+                autoPlay
+                muted
+                loop
+                playsInline
+                preload="metadata"
+                poster={project.video.poster}
+                aria-label={`${project.name} demo video`}
+              >
+                {project.video.sources.map((source, index) => (
+                  <source key={index} src={source.src} type={source.type} />
+                ))}
+              </video>
             </div>
           </Card>
         </motion.div>

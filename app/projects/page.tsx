@@ -44,14 +44,15 @@ const buttonVariants = {
 
 export default function ProjectsPage() {
   const router = useRouter()
-  const [selectedProjectId, setSelectedProjectId] = useState<ProjectId>(
-    projects[0].id
+  const [selectedProjectId, setSelectedProjectId] = useState<ProjectId | null>(
+    null
   )
 
   const selectedProject = useMemo(
     () =>
-      projects.find((project) => project.id === selectedProjectId) ??
-      projects[0],
+      selectedProjectId
+        ? projects.find((project) => project.id === selectedProjectId)
+        : undefined,
     [selectedProjectId]
   )
 
@@ -110,27 +111,34 @@ export default function ProjectsPage() {
         {/* RIGHT */}
         <motion.div variants={lineVariants} className="hidden md:block">
           <AnimatePresence mode="wait">
-            <motion.div
-              key={selectedProject.id}
-              initial={{ opacity: 0, y: 14, scale: 0.985, filter: "blur(8px)" }}
-              animate={{ opacity: 1, y: 0, scale: 1, filter: "blur(0px)" }}
-              exit={{ opacity: 0, y: -10, scale: 1.01, filter: "blur(6px)" }}
-              transition={{ duration: 0.2, ease: EASE }}
-              className="mx-auto w-full max-w-xl"
-            >
-              <Card className="gap-0 overflow-hidden bg-transparent py-0 ring-0">
-                <div className="relative aspect-[16/10] w-full overflow-hidden">
-                  <Image
-                    src={selectedProject.image}
-                    alt={selectedProject.name}
-                    fill
-                    sizes="(min-width: 1024px) 50vw, 100vw"
-                    className="object-cover"
-                    priority
-                  />
-                </div>
-              </Card>
-            </motion.div>
+            {selectedProject ? (
+              <motion.div
+                key={selectedProject.id}
+                initial={{
+                  opacity: 0,
+                  y: 14,
+                  scale: 0.985,
+                  filter: "blur(8px)",
+                }}
+                animate={{ opacity: 1, y: 0, scale: 1, filter: "blur(0px)" }}
+                exit={{ opacity: 0, y: -10, scale: 1.01, filter: "blur(6px)" }}
+                transition={{ duration: 0.2, ease: EASE }}
+                className="mx-auto w-full max-w-xl"
+              >
+                <Card className="gap-0 overflow-hidden bg-transparent py-0 ring-0">
+                  <div className="relative aspect-[16/10] w-full overflow-hidden">
+                    <Image
+                      src={selectedProject.video.poster}
+                      alt={selectedProject.name}
+                      fill
+                      sizes="(min-width: 1024px) 50vw, 100vw"
+                      className="object-cover"
+                      priority
+                    />
+                  </div>
+                </Card>
+              </motion.div>
+            ) : null}
           </AnimatePresence>
         </motion.div>
       </motion.div>
