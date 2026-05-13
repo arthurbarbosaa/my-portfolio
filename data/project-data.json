@@ -4,7 +4,7 @@
     "name": "Journaling",
     "image": "/assets/journaling-lp.webp",
     "year": 2023,
-    "description": "Um app de journaling que transforma reflexões, hábitos e metas em uma visão clara da sua evolução ao longo do tempo.",
+    "description": "A journaling app that turns reflections, habits, and goals into a clear view of your growth over time.",
     "technologies": [
       { "name": "JavaScript", "icon": "/assets/icons/javascript.svg" },
       { "name": "Vite", "icon": "/assets/icons/vite.svg" },
@@ -19,7 +19,7 @@
     "name": "Postfaster",
     "image": "/assets/postfaster-lp.webp",
     "year": 2024,
-    "description": "Ferramenta que permite publicar conteúdo em várias redes sociais ao mesmo tempo, de forma rápida e centralizada.",
+    "description": "A tool that lets you publish content across multiple social networks at the same time, quickly and from one place.",
     "technologies": [
       { "name": "JavaScript", "icon": "/assets/icons/javascript.svg" },
       { "name": "React", "icon": "/assets/icons/react.svg" },
@@ -37,7 +37,7 @@
     "name": "Multiplayer Game",
     "image": "/assets/game-preview.gif",
     "year": 2025,
-    "description": "Implementação de um jogo multiplayer em tempo real, explorando comunicação cliente-servidor, sincronização de estado e interação entre múltiplos jogadores.",
+    "description": "A real-time multiplayer game implementation focused on client-server communication, state synchronization, and multi-player interaction.",
     "technologies": [
       { "name": "JavaScript", "icon": "/assets/icons/javascript.svg" },
       { "name": "SocketIO", "icon": "/assets/icons/socketio.svg" },
@@ -52,7 +52,7 @@
     "name": "Portfolio Project",
     "image": "/assets/portfolio.webp",
     "year": 2025,
-    "description": "Plataforma que permite criar e publicar portfólios de forma rápida, destacando projetos e tecnologias de maneira simples e profissional.",
+    "description": "A platform for creating and publishing portfolios quickly, highlighting projects and technologies in a simple and professional way.",
     "technologies": [
       { "name": "JavaScript", "icon": "/assets/icons/javascript.svg" },
       { "name": "TypeScript", "icon": "/assets/icons/typescript.svg" },
@@ -69,7 +69,7 @@
     "name": "Tonyboy Promos",
     "image": "/assets/tonyboy-promos.webp",
     "year": 2026,
-    "description": "Plataforma que envia promoções personalizadas com base nos produtos que o usuário escolhe acompanhar.",
+    "description": "A platform that sends personalized promotions based on the products each user chooses to follow.",
     "technologies": [
       { "name": "JavaScript", "icon": "/assets/icons/javascript.svg" },
       { "name": "TypeScript", "icon": "/assets/icons/typescript.svg" },

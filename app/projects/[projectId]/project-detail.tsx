@@ -8,6 +8,38 @@ import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import type { Project } from "@/lib/projects"
 
+const EASE = [0.22, 1, 0.36, 1] as const
+
+const containerVariants = {
+  hidden: {},
+  show: {
+    transition: {
+      staggerChildren: 0.13,
+      delayChildren: 0.1,
+    },
+  },
+}
+
+const lineVariants = {
+  hidden: { opacity: 0, y: 18, filter: "blur(6px)" },
+  show: {
+    opacity: 1,
+    y: 0,
+    filter: "blur(0px)",
+    transition: { duration: 0.74, ease: EASE },
+  },
+}
+
+const buttonVariants = {
+  hidden: { opacity: 0, y: 12, scale: 0.98 },
+  show: (index: number) => ({
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: { duration: 0.56, delay: 0.08 * index, ease: EASE },
+  }),
+}
+
 type ProjectDetailProps = {
   project: Project
 }
@@ -15,12 +47,13 @@ type ProjectDetailProps = {
 export function ProjectDetail({ project }: ProjectDetailProps) {
   return (
     <section className="flex min-h-svh items-center justify-center px-6 py-10 sm:py-14">
-      <div className="grid w-full max-w-6xl items-center gap-8 md:grid-cols-2">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
-        >
+      <motion.div
+        className="grid w-full max-w-6xl items-center gap-8 md:grid-cols-2"
+        variants={containerVariants}
+        initial="hidden"
+        animate="show"
+      >
+        <motion.div variants={lineVariants}>
           <Card className="mx-auto w-full max-w-xl gap-0 overflow-hidden bg-transparent py-0 ring-0 md:mx-0">
             <div className="relative aspect-[16/10] w-full">
               <Image
@@ -37,30 +70,38 @@ export function ProjectDetail({ project }: ProjectDetailProps) {
 
         <motion.div
           className="flex h-full flex-col items-center justify-center gap-6 text-center"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.15, ease: "easeOut" }}
+          variants={containerVariants}
         >
-          <h1 className="font-heading text-4xl font-semibold tracking-tight sm:text-5xl">
+          <motion.h1
+            className="font-heading text-4xl font-semibold tracking-tight sm:text-5xl"
+            variants={lineVariants}
+          >
             {project.name}
-          </h1>
+          </motion.h1>
 
-          <p className="text-base text-muted-foreground sm:text-lg">
+          <motion.p
+            className="text-base text-muted-foreground sm:text-lg"
+            variants={lineVariants}
+          >
             {project.description}
-          </p>
+          </motion.p>
 
           <motion.div
             className="flex flex-col items-center gap-4"
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.3, ease: "easeOut" }}
+            variants={containerVariants}
           >
-            <p className="text-sm text-muted-foreground">
-              <span className="font-semibold text-foreground">Ano:</span>{" "}
+            <motion.p
+              className="text-sm text-muted-foreground"
+              variants={lineVariants}
+            >
+              <span className="font-semibold text-foreground">Year:</span>{" "}
               {project.year}
-            </p>
+            </motion.p>
 
-            <div className="flex flex-wrap justify-center gap-2">
+            <motion.div
+              className="flex flex-wrap justify-center gap-2"
+              variants={containerVariants}
+            >
               {project.technologies.map((technology, index) => {
                 const name =
                   typeof technology === "string" ? technology : technology.name
@@ -72,28 +113,38 @@ export function ProjectDetail({ project }: ProjectDetailProps) {
                 }
 
                 return (
-                  <Button
-                    type="button"
+                  <motion.div
                     key={`${name}-${index}`}
-                    title={name}
-                    variant="ghost"
-                    size="icon"
-                    className="rounded-full"
+                    variants={buttonVariants}
+                    custom={index}
                   >
-                    <Image src={icon} alt={name} width={16} height={16} />
-                  </Button>
+                    <Button
+                      type="button"
+                      title={name}
+                      variant="ghost"
+                      size="icon"
+                      className="rounded-full"
+                    >
+                      <Image src={icon} alt={name} width={16} height={16} />
+                    </Button>
+                  </motion.div>
                 )
               })}
-            </div>
+            </motion.div>
 
-            <Button size="lg" className="mt-2">
-              <Link href={project.visitUrl} target="_blank" rel="noreferrer">
-                Visitar projeto
-              </Link>
-            </Button>
+            <motion.div
+              variants={buttonVariants}
+              custom={project.technologies.length}
+            >
+              <Button size="lg" className="mt-2">
+                <Link href={project.visitUrl} target="_blank" rel="noreferrer">
+                  Visit project
+                </Link>
+              </Button>
+            </motion.div>
           </motion.div>
         </motion.div>
-      </div>
+      </motion.div>
     </section>
   )
 }
