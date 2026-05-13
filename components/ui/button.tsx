@@ -1,8 +1,13 @@
+"use client"
+
 import * as React from "react"
 import { cva, type VariantProps } from "class-variance-authority"
 import { Slot } from "radix-ui"
 
 import { cn } from "@/lib/utils"
+
+const MAGNET_SCALE = 1
+const MAGNET_MAX_OFFSET = 8
 
 const buttonVariants = cva(
   "group/button inline-flex shrink-0 items-center justify-center rounded-lg border border-transparent bg-clip-padding text-sm font-medium whitespace-nowrap transition-all outline-none select-none focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 active:not-aria-[haspopup]:translate-y-px disabled:pointer-events-none disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-3 aria-invalid:ring-destructive/20 dark:aria-invalid:border-destructive/50 dark:aria-invalid:ring-destructive/40 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
@@ -46,6 +51,11 @@ function Button({
   variant = "default",
   size = "default",
   asChild = false,
+  onMouseEnter,
+  onMouseMove,
+  onMouseLeave,
+  style,
+  children,
   ...props
 }: React.ComponentProps<"button"> &
   VariantProps<typeof buttonVariants> & {
@@ -53,14 +63,89 @@ function Button({
   }) {
   const Comp = asChild ? Slot.Root : "button"
 
+  const handleMouseEnter: React.MouseEventHandler<HTMLButtonElement> = (
+    event
+  ) => {
+    event.currentTarget.classList.remove("idle")
+    onMouseEnter?.(event)
+  }
+
+  const handleMouseMove: React.MouseEventHandler<HTMLButtonElement> = (
+    event
+  ) => {
+    const target = event.currentTarget
+    const rect = target.getBoundingClientRect()
+
+    if (!rect.width || !rect.height) {
+      onMouseMove?.(event)
+      return
+    }
+
+    const x =
+      ((event.clientX - rect.left) / rect.width - 0.5) * MAGNET_MAX_OFFSET
+    const y =
+      ((event.clientY - rect.top) / rect.height - 0.5) * MAGNET_MAX_OFFSET
+
+    target.style.setProperty("--magnet-x", `${x.toFixed(2)}px`)
+    target.style.setProperty("--magnet-y", `${y.toFixed(2)}px`)
+    target.style.setProperty("--magnet-scale", `${MAGNET_SCALE}`)
+    target.classList.remove("idle")
+    onMouseMove?.(event)
+  }
+
+  const handleMouseLeave: React.MouseEventHandler<HTMLButtonElement> = (
+    event
+  ) => {
+    event.currentTarget.style.setProperty("--magnet-x", "0px")
+    event.currentTarget.style.setProperty("--magnet-y", "0px")
+    event.currentTarget.style.setProperty("--magnet-scale", "1")
+    event.currentTarget.classList.add("idle")
+    onMouseLeave?.(event)
+  }
+
   return (
     <Comp
       data-slot="button"
       data-variant={variant}
       data-size={size}
-      className={cn(buttonVariants({ variant, size, className }))}
+      className={cn(
+        buttonVariants({ variant, size, className }),
+        "hover-magnet idle"
+      )}
+      style={
+        {
+          transform:
+            "translate(var(--magnet-x), var(--magnet-y)) scale(var(--magnet-scale))",
+          transformOrigin: "50% 50%",
+          opacity: 1,
+          transition: "transform 180ms cubic-bezier(0.22, 1, 0.36, 1)",
+          "--magnet-x": "0px",
+          "--magnet-y": "0px",
+          "--magnet-scale": "1",
+          ...style,
+        } as React.CSSProperties
+      }
+      onMouseEnter={handleMouseEnter}
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
       {...props}
-    />
+    >
+      {asChild ? (
+        children
+      ) : (
+        <span
+          className="inline-flex items-center"
+          style={{
+            gap: "inherit",
+            transform:
+              "translate(calc(var(--magnet-x) * -1), calc(var(--magnet-y) * -1))",
+            transition: "transform 180ms cubic-bezier(0.22, 1, 0.36, 1)",
+          }}
+        >
+          {children}
+        </span>
+      )}
+    </Comp>
   )
 }
 
