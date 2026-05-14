@@ -12,7 +12,8 @@
       { "name": "Python", "icon": "/assets/icons/python.svg" }
     ],
     "visitUrl": "#",
-    "video": {
+    "media": {
+      "kind": "video",
       "poster": "/assets/images/journaling-lp.webp",
       "sources": [
         { "src": "/assets/videos/journaling-demo.webm", "type": "video/webm" },
@@ -36,7 +37,8 @@
       { "name": "X", "icon": "/assets/icons/x.svg" }
     ],
     "visitUrl": "https://postfaster.vercel.app",
-    "video": {
+    "media": {
+      "kind": "video",
       "poster": "/assets/images/postfaster-lp.webp",
       "sources": [
         { "src": "/assets/videos/postfaster-demo.webm", "type": "video/webm" },
@@ -57,30 +59,30 @@
       { "name": "Css", "icon": "/assets/icons/css.svg" }
     ],
     "visitUrl": "https://github.com/arthurbarbosaa/meu-primeiro-jogo-multiplayer",
-    "video": {
-      "poster": "/assets/images/game-preview.gif",
+    "media": {
+      "kind": "gif",
+      "poster": "/assets/images/game-demo.gif",
       "sources": [
-        { "src": "/assets/videos/game-demo.webm", "type": "video/webm" },
+        { "src": "/assets/videos/game-demo.gif", "type": "image/gif" },
         { "src": "/assets/videos/game-demo.mp4", "type": "video/mp4" }
       ]
     }
   },
   {
     "id": "portfolio-project",
-    "name": "Portfolio Project",
+    "name": "Dev Portfolio",
     "year": 2025,
-    "description": "A platform for creating and publishing portfolios quickly, highlighting projects and technologies in a simple and professional way.",
+    "description": "A platform for creating and publishing dev portfolios quickly, highlighting projects and technologies in a simple and professional way.",
     "technologies": [
       { "name": "JavaScript", "icon": "/assets/icons/javascript.svg" },
-      { "name": "TypeScript", "icon": "/assets/icons/typescript.svg" },
       { "name": "React", "icon": "/assets/icons/react.svg" },
       { "name": "Next.js", "icon": "/assets/icons/nextjs.svg" },
-      { "name": "NestJS", "icon": "/assets/icons/nestjs.svg" },
-      { "name": "Python", "icon": "/assets/icons/python.svg" },
-      { "name": "Jest", "icon": "/assets/icons/jest.svg" }
+      { "name": "Postgresql", "icon": "/assets/icons/postgresql.svg" },
+      { "name": "Supabase", "icon": "/assets/icons/supabase.svg" }
     ],
     "visitUrl": "https://dev-portfolio-arthur-barbosa.vercel.app",
-    "video": {
+    "media": {
+      "kind": "video",
       "poster": "/assets/images/portfolio.webp",
       "sources": [
         { "src": "/assets/videos/portfolio-demo.webm", "type": "video/webm" },
@@ -89,12 +91,11 @@
     }
   },
   {
-    "id": "tonyboy-promos",
-    "name": "Tonyboy Promos",
+    "id": "offer-notifier",
+    "name": "Offer Notifier",
     "year": 2026,
     "description": "A platform that sends personalized promotions based on the products each user chooses to follow.",
     "technologies": [
-      { "name": "JavaScript", "icon": "/assets/icons/javascript.svg" },
       { "name": "TypeScript", "icon": "/assets/icons/typescript.svg" },
       { "name": "React", "icon": "/assets/icons/react.svg" },
       { "name": "Next.js", "icon": "/assets/icons/nextjs.svg" },
@@ -103,12 +104,10 @@
       { "name": "Jest", "icon": "/assets/icons/jest.svg" }
     ],
     "visitUrl": "https://offer-notifier.vercel.app",
-    "video": {
-      "poster": "/assets/images/tonyboy-promos.webp",
-      "sources": [
-        { "src": "/assets/videos/tonyboy-demo.webm", "type": "video/webm" },
-        { "src": "/assets/videos/tonyboy-demo.mp4", "type": "video/mp4" }
-      ]
+    "media": {
+      "kind": "image",
+      "poster": "/assets/images/offer-notifier.webp",
+      "sources": []
     }
   }
 ]

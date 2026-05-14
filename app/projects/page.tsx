@@ -128,7 +128,7 @@ export default function ProjectsPage() {
                 <Card className="gap-0 overflow-hidden bg-transparent py-0 ring-0">
                   <div className="relative aspect-[16/10] w-full overflow-hidden">
                     <Image
-                      src={selectedProject.video.poster}
+                      src={selectedProject.media.poster}
                       alt={selectedProject.name}
                       fill
                       sizes="(min-width: 1024px) 50vw, 100vw"

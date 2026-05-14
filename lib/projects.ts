@@ -8,7 +8,8 @@ export type ProjectTechnology = {
 export type Project = {
   id: string
   name: string
-  video: {
+  media: {
+    kind: "image" | "video" | "gif"
     poster: string
     sources: {
       src: string
