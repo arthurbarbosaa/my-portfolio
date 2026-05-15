@@ -68,7 +68,7 @@ export default function Page() {
           </motion.div>
           <motion.div variants={buttonVariants}>
             <Button variant="outline" size="lg">
-              <Link href="/contact">Get in touch</Link>
+              <Link href="/about">More about me</Link>
             </Button>
           </motion.div>
         </div>

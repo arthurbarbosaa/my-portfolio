@@ -1,27 +1,5 @@
 [
   {
-    "id": "journaling",
-    "name": "Journaling",
-    "year": 2023,
-    "description": "A journaling app that turns reflections, habits, and goals into a clear view of your growth over time.",
-    "technologies": [
-      { "name": "JavaScript", "icon": "/assets/icons/javascript.svg" },
-      { "name": "Vite", "icon": "/assets/icons/vite.svg" },
-      { "name": "React", "icon": "/assets/icons/react.svg" },
-      { "name": "Django", "icon": "/assets/icons/django.svg" },
-      { "name": "Python", "icon": "/assets/icons/python.svg" }
-    ],
-    "visitUrl": "#",
-    "media": {
-      "kind": "video",
-      "poster": "/assets/images/journaling-lp.webp",
-      "sources": [
-        { "src": "/assets/videos/journaling-demo.webm", "type": "video/webm" },
-        { "src": "/assets/videos/journaling-demo.mp4", "type": "video/mp4" }
-      ]
-    }
-  },
-  {
     "id": "postfaster",
     "name": "Postfaster",
     "year": 2024,
@@ -61,10 +39,9 @@
     "visitUrl": "https://github.com/arthurbarbosaa/meu-primeiro-jogo-multiplayer",
     "media": {
       "kind": "gif",
-      "poster": "/assets/images/game-demo.gif",
+      "poster": "/assets/images/game-demo.webp",
       "sources": [
-        { "src": "/assets/videos/game-demo.gif", "type": "image/gif" },
-        { "src": "/assets/videos/game-demo.mp4", "type": "video/mp4" }
+        { "src": "/assets/images/game-demo.gif", "type": "image/gif" }
       ]
     }
   },
@@ -108,6 +85,27 @@
       "kind": "image",
       "poster": "/assets/images/offer-notifier.webp",
       "sources": []
+    }
+  },
+  {
+    "id": "journaling",
+    "name": "Journaling",
+    "year": 2023,
+    "description": "A journaling app that turns reflections, habits, and goals into a clear view of your growth over time.",
+    "technologies": [
+      { "name": "JavaScript", "icon": "/assets/icons/javascript.svg" },
+      { "name": "Vite", "icon": "/assets/icons/vite.svg" },
+      { "name": "React", "icon": "/assets/icons/react.svg" },
+      { "name": "Django", "icon": "/assets/icons/django.svg" },
+      { "name": "Python", "icon": "/assets/icons/python.svg" }
+    ],
+    "media": {
+      "kind": "video",
+      "poster": "/assets/images/journaling-lp.webp",
+      "sources": [
+        { "src": "/assets/videos/journaling-demo.webm", "type": "video/webm" },
+        { "src": "/assets/videos/journaling-demo.mp4", "type": "video/mp4" }
+      ]
     }
   }
 ]

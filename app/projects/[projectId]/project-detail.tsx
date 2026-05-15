@@ -79,17 +79,27 @@ export function ProjectDetail({ project }: ProjectDetailProps) {
                 </video>
               )}
 
-              {project.media.kind === "gif" ||
-                (project.media.kind === "image" && (
-                  <Image
-                    src={project.media.poster}
-                    alt={project.name}
-                    fill
-                    sizes="(min-width: 1024px) 50vw, 100vw"
-                    className="object-cover"
-                    priority
-                  />
-                ))}
+              {project.media.kind === "gif" && (
+                <Image
+                  src={project.media.sources[0].src}
+                  alt={project.name}
+                  fill
+                  sizes="(min-width: 1024px) 50vw, 100vw"
+                  className="object-cover"
+                  priority
+                />
+              )}
+
+              {project.media.kind === "image" && (
+                <Image
+                  src={project.media.poster}
+                  alt={project.name}
+                  fill
+                  sizes="(min-width: 1024px) 50vw, 100vw"
+                  className="object-cover"
+                  priority
+                />
+              )}
             </div>
           </Card>
         </motion.div>
@@ -158,16 +168,22 @@ export function ProjectDetail({ project }: ProjectDetailProps) {
               })}
             </motion.div>
 
-            <motion.div
-              variants={buttonVariants}
-              custom={project.technologies.length}
-            >
-              <Button size="lg" className="mt-2">
-                <Link href={project.visitUrl} target="_blank" rel="noreferrer">
-                  Visit project
-                </Link>
-              </Button>
-            </motion.div>
+            {project.visitUrl?.trim() && (
+              <motion.div
+                variants={buttonVariants}
+                custom={project.technologies.length}
+              >
+                <Button size="lg" className="mt-2">
+                  <Link
+                    href={project.visitUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Visit project
+                  </Link>
+                </Button>
+              </motion.div>
+            )}
           </motion.div>
         </motion.div>
       </motion.div>
