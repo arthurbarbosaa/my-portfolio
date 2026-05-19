@@ -7,9 +7,10 @@
     "technologies": [
       { "name": "Python", "icon": "/assets/icons/python.svg" },
       { "name": "Docker", "icon": "/assets/icons/docker.svg" },
-      { "name": "Langchain", "icon": "/assets/icons/langchain.svg" },
-      { "name": "OpenWebUI", "icon": "/assets/icons/open-webui.svg" }
+      { "name": "Langchain", "icon": "/assets/icons/langchain.png" },
+      { "name": "OpenWebUI", "icon": "/assets/icons/open-webui.png" }
     ],
+    "visitUrl": "https://github.com/arthurbarbosaa/design-pattern-driven-langchain",
     "media": {
       "kind": "video",
       "poster": "/assets/images/design-pattern-model.webp",
