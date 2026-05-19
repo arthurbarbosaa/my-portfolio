@@ -1,5 +1,27 @@
 [
   {
+    "id": "design-pattern-model",
+    "name": "Design Pattern Model",
+    "year": 2026,
+    "description": "Assistente de design de software especializado em padrões de design.",
+    "technologies": [
+      { "name": "Python", "icon": "/assets/icons/python.svg" },
+      { "name": "Docker", "icon": "/assets/icons/docker.svg" },
+      { "name": "Langchain", "icon": "/assets/icons/langchain.svg" },
+      { "name": "OpenWebUI", "icon": "/assets/icons/open-webui.svg" }
+    ],
+    "media": {
+      "kind": "video",
+      "poster": "/assets/images/design-pattern-model.webp",
+      "sources": [
+        {
+          "src": "/assets/videos/design-pattern-model.mp4",
+          "type": "video/mp4"
+        }
+      ]
+    }
+  },
+  {
     "id": "postfaster",
     "name": "Postfaster",
     "year": 2024,
