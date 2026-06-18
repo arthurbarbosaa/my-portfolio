@@ -157,7 +157,7 @@ export function ProjectDetail({ project }: ProjectDetailProps) {
                     <Button
                       type="button"
                       title={name}
-                      variant="ghost"
+                      variant="outline"
                       size="icon"
                       className="rounded-full"
                     >
