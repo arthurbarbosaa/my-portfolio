@@ -136,7 +136,7 @@ export default function AboutPage() {
 
         {/* IMAGE */}
         <motion.div variants={lineVariants} className="order-1 md:order-2">
-          <Card className="mx-auto w-full max-w-md overflow-hidden bg-transparent ring-0">
+          <Card className="mx-auto w-full max-w-md gap-0 overflow-hidden bg-transparent py-0 shadow-2xl ring-0 shadow-black/60">
             <div className="relative h-[500px] w-full md:h-[500px] lg:h-[600px]">
               <Image
                 src="/assets/images/me.webp"
