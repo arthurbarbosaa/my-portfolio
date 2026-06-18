@@ -57,7 +57,7 @@ export function ProjectDetail({ project }: ProjectDetailProps) {
         animate="show"
       >
         <motion.div variants={lineVariants}>
-          <Card className="mx-auto w-full max-w-xl gap-0 overflow-hidden bg-transparent py-0 ring-0 md:mx-0">
+          <Card className="mx-auto w-full max-w-xl gap-0 overflow-hidden bg-transparent py-0 ring-0 shadow-2xl shadow-black/60 md:mx-0">
             <div className="relative aspect-[16/10] w-full">
               {project.media.kind === "video" && (
                 <video
@@ -173,7 +173,7 @@ export function ProjectDetail({ project }: ProjectDetailProps) {
                 variants={buttonVariants}
                 custom={project.technologies.length}
               >
-                <Button size="lg" className="mt-2">
+                <Button variant="outline" size="lg" className="mt-2">
                   <Link
                     href={project.visitUrl}
                     target="_blank"

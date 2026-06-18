@@ -125,7 +125,7 @@ export default function ProjectsPage() {
                 transition={{ duration: 0.2, ease: EASE }}
                 className="mx-auto w-full max-w-xl"
               >
-                <Card className="gap-0 overflow-hidden bg-transparent py-0 ring-0">
+                <Card className="gap-0 overflow-hidden bg-transparent py-0 ring-0 shadow-2xl shadow-black/60">
                   <div className="relative aspect-[16/10] w-full overflow-hidden">
                     <Image
                       src={selectedProject.media.poster}

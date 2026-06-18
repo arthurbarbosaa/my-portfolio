@@ -5,9 +5,9 @@ import { MeshGradient } from "@paper-design/shaders-react"
 export default function MeshGradientBackground() {
   return (
     <MeshGradient
-      className="fixed inset-0 w-full h-full -z-10"
-      colors={["#000000", "#1a1a1a", "#333333", "#ffffff"]}
-      speed={0.6}
+      className="fixed inset-0 -z-10 h-full w-full"
+      colors={["#000000", "#1c1c1c", "#4a4a4a", "#d4d4d4"]}
+      speed={0.9}
     />
   )
 }

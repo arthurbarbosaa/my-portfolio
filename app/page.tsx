@@ -62,7 +62,7 @@ export default function Page() {
         </div>
         <div className="flex flex-wrap justify-center gap-3">
           <motion.div variants={buttonVariants}>
-            <Button size="lg">
+            <Button variant="outline" size="lg">
               <Link href="/projects">View projects</Link>
             </Button>
           </motion.div>
