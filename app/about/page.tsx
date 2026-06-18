@@ -85,8 +85,8 @@ export default function AboutPage() {
           >
             I'm a software developer focused on building scalable and
             maintainable applications. I enjoy working with modern web
-            technologies, exploring design patterns, and creating solutions that
-            balance performance, clarity, and user experience.
+            technologies, creating solutions that balance performance, clarity,
+            and user experience.
           </motion.p>
 
           {/* SOCIAL BUTTONS */}

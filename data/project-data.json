@@ -91,26 +91,6 @@
     }
   },
   {
-    "id": "offer-notifier",
-    "name": "Offer Notifier",
-    "year": 2026,
-    "description": "A platform that sends personalized promotions based on the products each user chooses to follow.",
-    "technologies": [
-      { "name": "TypeScript", "icon": "/assets/icons/typescript.svg" },
-      { "name": "React", "icon": "/assets/icons/react.svg" },
-      { "name": "Next.js", "icon": "/assets/icons/nextjs.svg" },
-      { "name": "NestJS", "icon": "/assets/icons/nestjs.svg" },
-      { "name": "Python", "icon": "/assets/icons/python.svg" },
-      { "name": "Jest", "icon": "/assets/icons/jest.svg" }
-    ],
-    "visitUrl": "https://offer-notifier.vercel.app",
-    "media": {
-      "kind": "image",
-      "poster": "/assets/images/offer-notifier.webp",
-      "sources": []
-    }
-  },
-  {
     "id": "journaling",
     "name": "Journaling",
     "year": 2023,
